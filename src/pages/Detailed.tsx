@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Bookmark, 
@@ -11,7 +10,8 @@ import {
   Filter, 
   Info, 
   Search, 
-  X 
+  X,
+  ExternalLink
 } from 'lucide-react';
 import { 
   Table, 
