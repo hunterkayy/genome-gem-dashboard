@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Genomics specific colors
+				genomics: {
+					blue: '#2C5282',
+					teal: '#38B2AC',
+					protective: '#48BB78',  // green for protective variants
+					uncertain: '#ECC94B',   // yellow for uncertain variants
+					risk: '#E53E3E',        // red for risk variants
+					lightGray: '#F7FAFC',
+					mediumGray: '#E2E8F0',
+					darkGray: '#4A5568',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +96,45 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: {
+						opacity: '0'
+					},
+					to: {
+						opacity: '1'
+					}
+				},
+				'fade-out': {
+					from: {
+						opacity: '1'
+					},
+					to: {
+						opacity: '0'
+					}
+				},
+				'slide-in': {
+					from: {
+						transform: 'translateY(20px)',
+						opacity: '0'
+					},
+					to: {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
+				'slide-in': 'slide-in 0.5s ease-out'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				heading: ['Roboto Slab', 'serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
